@@ -1,42 +1,136 @@
-# sv
+# 🍳 Recipe Finder App
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A modern, responsive SvelteKit application for searching recipes, managing favorites, building custom recipes, and planning weekly meals. It integrates reusable Web Components built with Stencil.js ([`@panja.tushar15/recipe-components`](https://www.npmjs.com/package/@panja.tushar15/recipe-components)).
 
-## Creating a project
+---
 
-If you're seeing this, you've probably already done this step. Congrats!
+## 🔗 Project Links
 
-```sh
-# create a new project
-npx sv create my-app
-```
+- 📦 **Published Stencil Component Library (NPM)**: [`@panja.tushar15/recipe-components`](https://www.npmjs.com/package/@panja.tushar15/recipe-components)
+- 🐙 **GitHub Repository**: [Recipe Finder App Repository](https://github.com/tusharpanja/recipe-finder-app)
 
-To recreate this project with the same configuration:
+---
 
-```sh
-# recreate this project
-npx sv@0.17.0 create --template minimal --types ts --add prettier eslint --install npm recipe-finder-app
-```
+## 💻 Tech Stack
 
-## Developing
+- ⚡ **Svelte 5**
+- 🛠️ **SvelteKit**
+- 📘 **TypeScript**
+- 🎨 **StencilJS**
+- 🍲 **TheMealDB API**
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+---
 
-```sh
+## ✨ Features
+
+### 🔍 Recipe Discovery
+- 🔎 Search recipes dynamically
+- 🖼️ Browse high-quality recipe cards
+- 📁 Filter recipes by category
+- 🌐 Filter recipes by cuisine/area
+
+### 📖 Recipe Details
+- 📄 View complete recipe details
+- 🥗 View ingredients and measurements
+- 👨‍🍳 View step-by-step cooking instructions
+
+### 📝 Recipe Management
+- ➕ Create custom recipes
+- ✏️ Edit custom recipes
+- 🗑️ Delete custom recipes with confirmation dialog
+- ✅ Validate recipe input fields
+
+### ❤️ Favorites
+- 💖 Add recipes to favorites
+- 🤍 Remove recipes from favorites
+- 📌 View all favorite recipes in a unified grid
+
+### 📅 Weekly Meal Planner
+- ➕ Add recipes to specific days of the week
+- 🔄 Change planned meals
+- ❌ Remove planned meals
+
+---
+
+## 🧩 StencilJS Component Library
+
+The application consumes a separately published StencilJS Web Component library from NPM.
+
+### 📦 Web Components Include:
+- 🔍 `recipe-search`
+- 🎴 `recipe-card`
+- ❤️ `favorite-button`
+- 📅 `meal-day-card`
+
+### ⚡ Communication Architecture:
+- ⚙️ **Component properties** (data binding)
+- 📢 **Custom events** (event dispatching & handlers)
+- 📥 **Slots** (content projection)
+
+---
+
+## 🛠️ Setup Instructions
+
+### 📋 Prerequisites
+- **Node.js** (v18 or higher recommended)
+- **npm** (or pnpm / yarn)
+
+### 📥 Installation
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/tusharpanja/recipe-finder-app.git
+   cd recipe-finder-app
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Validate TypeScript & Svelte files**:
+   ```bash
+   npm run check
+   ```
+
+---
+
+## 🚀 Starting Development Server
+
+To start the local development server with hot module replacement (HMR):
+
+```bash
 npm run dev
+```
 
-# or start the server and open the app in a new browser tab
+To start the server and automatically open the application in your web browser:
+
+```bash
 npm run dev -- --open
 ```
 
-## Building
+The application will be accessible at `http://localhost:5173`.
 
-To create a production version of your app:
+---
 
-```sh
+## 🧠 Assumptions Made
+
+1. **TheMealDB API Availability**: Recipe lookup, search, categories, and cuisine fetching depend on the public [TheMealDB API](https://www.themealdb.com/api.php).
+2. **Web Component Integration**: The app consumes Web Components from [`@panja.tushar15/recipe-components`](https://www.npmjs.com/package/@panja.tushar15/recipe-components) loaded via client-side loader (`defineCustomElements()`). It assumes a browser supporting Custom Elements and Shadow DOM.
+3. **Browser LocalStorage**: Data persistence for Favorites, Custom Recipe CRUD, and Weekly Meal Plan assignments relies on the browser's native `localStorage`.
+4. **Svelte 5 Runes**: Reactive state is managed using Svelte 5 runes (`$state`, `$derived`, `$props`, `$effect`).
+
+---
+
+## 🏗️ Production Build
+
+To build the production bundle:
+
+```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+To preview the built production app locally:
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```bash
+npm run preview
+```
