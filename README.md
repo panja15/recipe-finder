@@ -7,7 +7,7 @@ A modern, responsive SvelteKit application for searching recipes, managing favor
 ## 🔗 Project Links
 
 - 📦 **Published Stencil Component Library (NPM)**: [`@panja.tushar15/recipe-components`](https://www.npmjs.com/package/@panja.tushar15/recipe-components)
-- 🐙 **GitHub Repository**: [Recipe Finder App Repository](https://github.com/tusharpanja/recipe-finder-app)
+- 🐙 **GitHub Repository**: [panja15/recipe-finder](https://github.com/panja15/recipe-finder)
 
 ---
 
@@ -78,7 +78,7 @@ The application consumes a separately published StencilJS Web Component library 
 ### 📥 Installation
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/tusharpanja/recipe-finder-app.git
+   git clone https://github.com/panja15/recipe-finder.git
    cd recipe-finder-app
    ```
 
